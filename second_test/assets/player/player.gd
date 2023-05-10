@@ -8,9 +8,11 @@ export var gravity = 0.98
 export var jump_power = 35
 export var mouse_sensitivity = 0.3
 
+export var scene : NodePath
+
 var velocity:Vector3
 
-onready var cam = $Head/Camera
+onready var cam = get_node("Head/Camera")  # $Head/Camera
 
 var mode = 0
 
@@ -18,6 +20,13 @@ var bot_state
 
 func _ready():
 	pass
+	print(scene)
+	
+	scene = "Head"
+	var real_scene = get_node(scene)
+	print(real_scene)
+
+
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	# global.gplayer = self
 	add_to_group("player")
