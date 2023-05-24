@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://GloriaHallelujah.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scene_outro.gd" type="Script" id=2]
 
 [sub_resource type="BitmapFont" id=1]
 
@@ -12,6 +13,7 @@ size = 80
 font_data = ExtResource( 1 )
 
 [node name="scene_outro" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -35,3 +37,5 @@ margin_top = 442.0
 margin_right = 902.0
 margin_bottom = 505.0
 text = "back to intro"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
