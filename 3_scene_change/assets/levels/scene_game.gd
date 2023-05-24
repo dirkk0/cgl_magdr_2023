@@ -20,3 +20,9 @@ func _on_Button_pressed():
 	var scene = load("res://scene_outro.tscn")
 	get_tree().change_scene_to(scene)
 	pass # Replace with function body.
+
+
+func _on_Area_body_entered(body):
+	print(body)
+	Global.ctr += 1
+	pass # Replace with function body.

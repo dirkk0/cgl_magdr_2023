@@ -7,6 +7,8 @@ extends Node2D
 
 var ctr = 0
 
+var has_key = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,6 +22,6 @@ func _ready():
 
 func _on_Timer_timeout():
 
-	print("timeout", ctr)
+	# print("timeout", ctr)
 	get_node("CanvasLayer/Label").text = str(ctr)
 	pass # Replace with function body.
