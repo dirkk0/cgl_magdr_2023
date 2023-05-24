@@ -36,7 +36,7 @@ func _ready():
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		if paused == false:
-			get_node("%Button").visible = true
+			get_node("%Button").visible = true  # absolute reference
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			paused = true
 		else:
