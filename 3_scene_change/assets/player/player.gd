@@ -8,6 +8,8 @@ export var gravity = 0.98
 export var jump_power = 35
 export var mouse_sensitivity = 0.3
 
+var paused = false
+
 export var scene : NodePath
 
 var velocity:Vector3
@@ -33,7 +35,15 @@ func _ready():
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if paused == false:
+			get_node("%Button").visible = true
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			paused = true
+		else:
+			get_node("%Button").visible = false
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			paused = false
+			
 #		if Global.freeze:
 #			get_tree().quit()
 #		Global.freeze = true # not Global.freeze
@@ -111,9 +121,10 @@ func _input(event):
 
 	
 	if event is InputEventMouseMotion:
-		# g4 self.rotate_y(deg_to_rad(-event.relative.x) * mouse_sensitivity)
-		self.rotate_y(deg2rad(-event.relative.x) * mouse_sensitivity)
+		if paused == false:
+			# g4 self.rotate_y(deg_to_rad(-event.relative.x) * mouse_sensitivity)
+			self.rotate_y(deg2rad(-event.relative.x) * mouse_sensitivity)
 
-		#  g4 cam.rotate_x(deg_to_rad(-event.relative.y) *mouse_sensitivity)
-		cam.rotate_x(deg2rad(-event.relative.y) *mouse_sensitivity)
-		cam.rotation.x = clamp(cam.rotation.x, -PI*0.3, PI*0.3)
+			#  g4 cam.rotate_x(deg_to_rad(-event.relative.y) *mouse_sensitivity)
+			cam.rotate_x(deg2rad(-event.relative.y) *mouse_sensitivity)
+			cam.rotation.x = clamp(cam.rotation.x, -PI*0.3, PI*0.3)

@@ -20,10 +20,13 @@ shape = SubResource( 1 )
 transform = Transform( 0.1, 0, 0, 0, 0.961112, 0.276157, 0, -0.0276157, 0.0961112, -12.0442, 33.209, 0.522934 )
 
 [node name="Button" type="Button" parent="." index="2"]
-margin_left = 781.0
+unique_name_in_owner = true
+visible = false
+margin_left = 850.0
 margin_top = 38.0
 margin_right = 963.0
-margin_bottom = 136.0
+margin_bottom = 80.0
+text = "quit?"
 
 [node name="Player" parent="Button" index="0" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.393, -3.8147e-06, 23.0609 )
