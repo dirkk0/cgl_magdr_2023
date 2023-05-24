@@ -16,7 +16,7 @@ func _ready():
 
 func _on_Button_pressed():
 	print("button was pressed")
-	var outro_scene = load("res://scene_outro.tscn")
-	get_tree().change_scene_to(outro_scene)
+	var scene = load("res://assets/levels/scene_game.tscn")
+	get_tree().change_scene_to(scene)
 	# ("Label").text = "ok, this worked"
 	pass # Replace with function body.
