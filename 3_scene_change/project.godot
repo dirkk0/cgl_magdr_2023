@@ -12,6 +12,10 @@ config_version=4
 
 run/main_scene="res://assets/levels/scene_game.tscn"
 
+[autoload]
+
+Global="*res://Global.tscn"
+
 [input]
 
 ui_w={
