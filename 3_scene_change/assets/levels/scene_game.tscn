@@ -19,10 +19,7 @@ shape = SubResource( 1 )
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="1"]
 transform = Transform( 0.1, 0, 0, 0, 0.961112, 0.276157, 0, -0.0276157, 0.0961112, -12.0442, 33.209, 0.522934 )
 
-[node name="Camera" type="Camera" parent="." index="2"]
-transform = Transform( 0.039638, -0.0563941, 0.0724467, 0, 0.789106, 0.614258, -0.0918086, -0.024348, 0.0312786, 5.91189, 18.7168, 2.0824 )
-
-[node name="Button" type="Button" parent="." index="3"]
+[node name="Button" type="Button" parent="." index="2"]
 margin_left = 781.0
 margin_top = 38.0
 margin_right = 963.0
@@ -30,5 +27,9 @@ margin_bottom = 136.0
 
 [node name="Player" parent="Button" index="0" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.393, -3.8147e-06, 23.0609 )
+
+[node name="Camera" type="Camera" parent="." index="3"]
+transform = Transform( 0.0396376, -0.0563943, 0.0724468, 0, 0.789105, 0.614258, -0.0918088, -0.0243477, 0.0312783, 5.0926, 17.3339, 3.34692 )
+current = true
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
