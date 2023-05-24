@@ -20,3 +20,9 @@ func _on_Button_pressed():
 	var intro_scene = load("res://scene_intro.tscn")
 	get_tree().change_scene_to(intro_scene)
 	pass # Replace with function body.
+
+
+func _on_RichTextLabel_meta_clicked(meta):
+	print(meta)
+	OS.shell_open(meta)
+	pass # Replace with function body.
