@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/agent/agent.glb" type="PackedScene" id=1]
+[ext_resource path="res://assets/agent/agent.gd" type="Script" id=2]
+[ext_resource path="res://assets/agent/Timer2.gd" type="Script" id=3]
+
+[node name="agent" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Cube" parent="." index="0"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2, 0 )
+
+[node name="Timer" type="Timer" parent="." index="1"]
+autostart = true
+
+[node name="Timer2" type="Timer" parent="." index="2"]
+wait_time = 0.5
+script = ExtResource( 3 )

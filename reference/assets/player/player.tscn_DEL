@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxibmujt441pt"]
+
+[ext_resource type="Script" path="res://assets/player/player.gd" id="1_007ux"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wsxnf"]
+
+[sub_resource type="CapsuleShape" id="CapsuleShape_n78su"]
+
+[node name="Player" type="CharacterBody"]
+script = ExtResource("1_007ux")
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+visible = false
+mesh = SubResource("CapsuleMesh_wsxnf")
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource("CapsuleShape_n78su")
+
+[node name="Head" type="Node" parent="."]
+
+[node name="Camera" type="Camera" parent="Head"]
+transform = Transform(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.588828, 0)
