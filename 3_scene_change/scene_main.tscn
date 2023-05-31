@@ -32,3 +32,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2996, 4, 15.1333 )
 
 [node name="waypoint4" type="Position3D" parent="." groups=["waypoints"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.1452, 4, 0 )
+
+[node name="waypoint5" type="Position3D" parent="." groups=["waypoints2"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5181, 4, 16.3411 )
+
+[node name="waypoint6" type="Position3D" parent="." groups=["waypoints2"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6775, 4, 16.3411 )
+
+[node name="agent2" parent="." instance=ExtResource( 4 )]
+speed = 0.1
+waypoint_name = "waypoints2"

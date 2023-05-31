@@ -11,10 +11,13 @@ var waypoints = []
 
 var direction
 
+export var speed = 0.05
+export var waypoint_name = "waypoints"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-	waypoints = get_tree().get_nodes_in_group("waypoints")
+	waypoints = get_tree().get_nodes_in_group( waypoint_name )
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,7 +27,7 @@ func _process(delta):
 	var pos = translation
 	
 	direction = new_pos - pos
-	translation = pos + direction * 0.01
+	translation = pos + direction * speed
 	
 
 
