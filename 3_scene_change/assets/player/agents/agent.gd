@@ -9,6 +9,8 @@ var idx = -1
 
 var waypoints = []
 
+var direction
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -16,8 +18,14 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	pass
+	var new_pos = waypoints[idx].translation
+	var pos = translation
+	
+	direction = new_pos - pos
+	translation = pos + direction * 0.01
+	
 
 
 func _on_Timer_timeout():
@@ -30,5 +38,5 @@ func _on_Timer_timeout():
 	
 	# var x = rand_range(0,10)
 	# var z = rand_range(0, 10)
-	translation = pos
+	# translation = pos
 	pass # Replace with function body.
