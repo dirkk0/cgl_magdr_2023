@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="key"]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.16019, 0.444784, 0 )
+visible = false

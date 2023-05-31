@@ -3,7 +3,7 @@ extends KinematicBody
 var del
 
 export var speed = 10
-export var acceleration = 5
+export var acceleration = 2
 export var gravity = 0.98
 export var jump_power = 35
 export var mouse_sensitivity = 0.3
@@ -105,6 +105,7 @@ func _physics_process(delta):
 
 	# g4 move_and_slide()
 	del = move_and_slide(velocity, Vector3.UP)
+	# del = move_and_collide(velocity)
 
 
 func _input(event):
