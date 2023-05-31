@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/player/agents/agent.gd" type="Script" id=1]
 
 [sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.0392157, 0.882353, 0.0705882, 1 )
+albedo_color = Color( 0.678431, 0.0392157, 0.882353, 1 )
 
 [sub_resource type="CubeMesh" id=2]
 material = SubResource( 1 )
