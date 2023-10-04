@@ -6,14 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <script type="importmap">
+    <!-- <script type="importmap">
         {
             "imports": {
                 "three": "https://unpkg.com/three@0.157.0/build/three.module.js"
             }
         }
-      </script>
-      
+    </script> -->
+
+    <script type="importmap">
+        {
+            "imports": {
+              "three": "./node_modules/three/build/three.module.js",
+              "three/addons/": "./node_modules/three/examples/jsm/"
+            }
+          }
+    </script>
 </head>
 
 <body>
