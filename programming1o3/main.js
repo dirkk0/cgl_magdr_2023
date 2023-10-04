@@ -23,8 +23,8 @@ const material = new THREE.MeshBasicMaterial({ color: "yellow", wireframe: true 
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
-// const ambLight = new THREE.AmbientLight("white", 0.2)
-// scene.add(ambLight)
+const ambLight = new THREE.AmbientLight("white", 0.2)
+scene.add(ambLight)
 
 const dirLight = new THREE.DirectionalLight("white", 2.5)
 dirLight.position.set(-5, 5, -1)
