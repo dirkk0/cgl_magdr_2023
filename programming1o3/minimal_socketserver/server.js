@@ -28,7 +28,7 @@ server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
 
-
+// let players = []
 
 let world = {
     things: { x: 130, y: 70 }
@@ -41,6 +41,26 @@ io.on('connection', (socket) => {
 
         msg.id = socket.id
         io.emit('data-to-client', msg);
+    });
+
+    socket.on('key-to-server', (msg) => {
+        console.log(msg)
+
+        let condition = true
+        condition = condition && msg.coords.x > (world.things.x - 5)
+        condition = condition && msg.coords.x < (world.things.x + 5)
+        condition = condition && msg.coords.y > (world.things.y - 5)
+        condition = condition && msg.coords.y < (world.things.y + 5)
+
+        // console.log()
+        if (condition) {
+            console.log("yay")
+            world = {
+                things: { x: Math.random() * step, y: Math.random() * step }
+            }
+        }
+        // msg.id = socket.id
+        // io.emit('data-to-client', msg);
     });
 
     socket.on('world-to-server', (w) => {
@@ -79,9 +99,9 @@ setInterval(() => {
 }, 500);
 
 let step = 400
-setInterval(() => {
-    world = {
-        things: { x: Math.random() * step, y: Math.random() * step }
-    }
+// setInterval(() => {
+//     world = {
+//         things: { x: Math.random() * step, y: Math.random() * step }
+//     }
 
-}, 2000);
+// }, 2000);

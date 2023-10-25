@@ -29,6 +29,9 @@ document.body.addEventListener('keydown', function (e) {
   myplayer.style.top = mycoords.y + "px"
   myplayer.style.left = mycoords.x + "px"
 
+  let msg = {code: e.code, id: netObject.socket.id, coords: mycoords}
+  netObject.socket.emit("key-to-server", msg);
+
 })
 
 function NetObject() {
