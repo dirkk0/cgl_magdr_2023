@@ -16,9 +16,15 @@
 
     <style>
         .players {
-            /* display: block; */
             position: absolute;
             background: #000a;
+            border: 1px solid black;
+            width: 10px;
+            height: 10px;
+        }
+        #me {
+            position: absolute;
+            background: red;
             border: 1px solid black;
             width: 10px;
             height: 10px;
@@ -44,6 +50,8 @@
     <!-- <span id="player-0" class=""></span>
     <span id="player-1" class=""></span>
     <span id="player-2" class=""></span> -->
+
+    <div class=""players" id="me"></div>
 
     <div id="container"></div>
     <script src="/socket.io/socket.io.js"></script>

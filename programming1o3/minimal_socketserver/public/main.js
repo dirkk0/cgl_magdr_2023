@@ -3,6 +3,29 @@
 const FREQ = 33;
 let world = [0, 0, 0];
 
+let myplayer = document.querySelector("#me")
+
+let mycoords = { x: 0, y: 0 }
+let step = 10
+
+document.body.addEventListener('keydown', function (e) {
+  if (e.code == "KeyW") {
+    mycoords.y -= step
+  }
+  if (e.code == "KeyA") {
+    mycoords.x -= step
+  }
+  if (e.code == "KeyS") {
+    mycoords.y += step
+  }
+  if (e.code == "KeyD") {
+    mycoords.x += step
+  }
+  myplayer.style.top = mycoords.y + "px"
+  myplayer.style.left = mycoords.x + "px"
+
+})
+
 function NetObject() {
   this.users = [];
 
@@ -109,21 +132,21 @@ function doInteract(msg) {
   netObject.socket.emit("world-to-server", world);
 }
 
-setInterval(() => {
-  // create random position every second, so we see some changes
-  let pos, rot;
+// setInterval(() => {
+//   // create random position every second, so we see some changes
+//   let pos, rot;
 
-  let rx = Math.random() * 10;
-  let ry = Math.random() * 10;
-  pos = { x: rx, y: ry, z: 3 };
-  rot = { x: 0, y: 0, z: 0 };
-  myself.posrot = [
-    pos.x.toFixed(2),
-    pos.y.toFixed(2),
-    pos.z.toFixed(2),
-    rot.x.toFixed(2),
-    rot.y.toFixed(2),
-    rot.z.toFixed(2),
-    0,
-  ];
-}, 1000);
+//   let rx = Math.random() * 10;
+//   let ry = Math.random() * 10;
+//   pos = { x: rx, y: ry, z: 3 };
+//   rot = { x: 0, y: 0, z: 0 };
+//   myself.posrot = [
+//     pos.x.toFixed(2),
+//     pos.y.toFixed(2),
+//     pos.z.toFixed(2),
+//     rot.x.toFixed(2),
+//     rot.y.toFixed(2),
+//     rot.z.toFixed(2),
+//     0,
+//   ];
+// }, 1000);
