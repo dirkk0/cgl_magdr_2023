@@ -1,9 +1,14 @@
 "use strict";
 
 const FREQ = 33;
-let world = [0, 0, 0];
+// let world = {
+//   things: { x: 0, y: 0 }
+// }
+
+let world = null
 
 let myplayer = document.querySelector("#me")
+let thing = document.querySelector("#thing")
 
 let mycoords = { x: 0, y: 0 }
 let step = 10
@@ -61,6 +66,9 @@ function NetObject() {
     this.socket.on("world-to-client", (w) => {
       // console.log("world", world)
       world = w;
+
+      thing.style.left = world.things.x + "px"
+      thing.style.top = world.things.y + "px"
 
       return;
     });
@@ -137,7 +145,8 @@ setInterval(() => {
 
 setInterval(() => {
   // just monitor the coordinates, not really needed
-  info.innerText = JSON.stringify({ ...netObject.users });
+  // info.innerText = JSON.stringify({ ...netObject.users });
+  info.innerText = JSON.stringify({ world });
 }, 500);
 
 

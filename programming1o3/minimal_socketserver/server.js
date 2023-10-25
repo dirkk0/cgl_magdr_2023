@@ -24,13 +24,15 @@ const io = socketio(server);
 
 let startTime = new Date()
 let serverTime = null
-server.listen(PORT, () =>  {
+server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
 
 
 
-let world = [0, 0, 1]
+let world = {
+    things: { x: 130, y: 70 }
+}
 
 io.on('connection', (socket) => {
     console.log("LOG: connected with ", socket.id, socket.handshake.address);
@@ -70,8 +72,16 @@ io.on('connection', (socket) => {
 
 
 setInterval(() => {
-    serverTime = new Date() - startTime
-    world[0] = (serverTime / 1000).toFixed(1)
+    // serverTime = new Date() - startTime
+    // world[0] = (serverTime / 1000).toFixed(1)
     io.emit('world-to-client', world);
     // console.log(world)
 }, 500);
+
+let step = 400
+setInterval(() => {
+    world = {
+        things: { x: Math.random() * step, y: Math.random() * step }
+    }
+
+}, 2000);
