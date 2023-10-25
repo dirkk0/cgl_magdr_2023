@@ -104,8 +104,8 @@ setInterval(() => {
       let player = document.getElementById(id);
       // has coordinates
       if (u.posrot) {
-        let x = 200 + u.posrot[0] * 10;
-        let y = 200 + u.posrot[1] * 10;
+        let x = u.posrot[1];
+        let y = u.posrot[0];
 
         // move the other players
         player.style.top = x + "px";
@@ -117,6 +117,21 @@ setInterval(() => {
 
 setInterval(() => {
   // send my position
+  let pos, rot;
+
+  let rx = mycoords.x
+  let ry = mycoords.y
+  pos = { x: rx, y: ry, z: 3 };
+  rot = { x: 0, y: 0, z: 0 };
+  myself.posrot = [
+    pos.x.toFixed(2),
+    pos.y.toFixed(2),
+    pos.z.toFixed(2),
+    rot.x.toFixed(2),
+    rot.y.toFixed(2),
+    rot.z.toFixed(2),
+    0,
+  ];
   netObject.sendData(myself);
 }, FREQ);
 
@@ -136,8 +151,8 @@ function doInteract(msg) {
 //   // create random position every second, so we see some changes
 //   let pos, rot;
 
-//   let rx = Math.random() * 10;
-//   let ry = Math.random() * 10;
+//   let rx = mycoords.x
+//   let ry = mycoords.y
 //   pos = { x: rx, y: ry, z: 3 };
 //   rot = { x: 0, y: 0, z: 0 };
 //   myself.posrot = [
