@@ -3,6 +3,7 @@
 
 const http = require('http');
 // const https = require('https');
+
 const express = require('express');
 
 const socketio = require('socket.io');
@@ -13,6 +14,7 @@ const PORT = process.env.PORT || 5002;
 
 
 let app = express();
+
 app.use('/', express.static(__dirname + '/public'));
 
 const server = http.createServer(app)

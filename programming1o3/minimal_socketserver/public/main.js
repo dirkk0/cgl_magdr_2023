@@ -61,7 +61,10 @@ function NetObject() {
   };
 }
 
-window.netObject = new NetObject();
+let netObject = new NetObject();
+// window maybe?
+
+
 netObject.init();
 
 let myself = {};
