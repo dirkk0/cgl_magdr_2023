@@ -1,14 +1,14 @@
 {
-    "name": "snaf",
+    "name": "multiplayer-thing",
     "version": "1.0.0",
-    "description": "simple naf",
+    "description": "simple multiplayer engine",
     "main": "src/server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node src/server.js"
+        "start": "node server.js"
     },
     "keywords": [
-        "aframe"
+        "socket"
     ],
     "author": "Dirk Krause <dirkk0@googlemail.com> (https://curious-electric.com)",
     "license": "ISC ",
