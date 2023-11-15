@@ -24,6 +24,8 @@ const io = socketio(server);
 
 let startTime = new Date()
 let serverTime = null
+
+// start express server
 server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
