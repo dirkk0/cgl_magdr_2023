@@ -43,6 +43,7 @@ io.on('connection', (socket) => {
 
         msg.id = socket.id
         io.emit('data-to-client', msg);
+        console.log(msg)
     });
 
     socket.on('key-to-server', (msg) => {

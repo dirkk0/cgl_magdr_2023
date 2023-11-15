@@ -61,6 +61,7 @@ function NetObject() {
     this.sendData = function (that) {
       let msg = {
         posrot: that.posrot,
+        name: myName
       };
       this.socket.emit("data-to-server", msg);
     };
@@ -100,7 +101,7 @@ function NetObject() {
           console.log("other users", netObject.users);
 
           let players = document.getElementById("container");
-          players.innerHTML += `<div class="players" id="player-${m.id}">-${m.id}<div>`;
+          players.innerHTML += `<div class="players" id="player-${m.id}">-${m.name}<div>`;
         }
         netObject.users[m.id].posrot = m.posrot;
       }
