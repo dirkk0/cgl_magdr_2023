@@ -13,6 +13,18 @@ let thing = document.querySelector("#thing")
 let mycoords = { x: 0, y: 0 }
 let step = 10
 
+let i1 = document.querySelector("#i1")
+
+let myName = localStorage.getItem("myName");
+console.log("myName", myName)
+i1.value = myName
+
+
+window.storeName = () => {
+  console.log(i1.value)
+  localStorage.setItem("myName", i1.value);
+}
+
 document.body.addEventListener('keydown', function (e) {
   if (e.code == "KeyW") {
     mycoords.y -= step
@@ -29,7 +41,7 @@ document.body.addEventListener('keydown', function (e) {
   myplayer.style.top = mycoords.y + "px"
   myplayer.style.left = mycoords.x + "px"
 
-  let msg = {code: e.code, id: netObject.socket.id, coords: mycoords}
+  let msg = { code: e.code, id: netObject.socket.id, coords: mycoords }
   netObject.socket.emit("key-to-server", msg);
 
 })

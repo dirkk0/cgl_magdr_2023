@@ -41,6 +41,11 @@
             width: 10px;
             height: 10px;
         }
+
+        #i1 {
+            position: absolute;
+            bottom: 10px;
+        }
     </style>
 
     <script>
@@ -67,9 +72,11 @@
     <div id="thing"></div>
 
     <div id="container"></div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="main.js" type="module"></script>
     
+    <input id="i1" oninput="storeName()">
 </body>
 
 </html>
