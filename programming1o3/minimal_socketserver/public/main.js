@@ -26,16 +26,17 @@ window.storeName = () => {
 }
 
 document.body.addEventListener('keydown', function (e) {
-  if (e.code == "KeyW") {
+  if (e.code == "ArrowUp") {
+    console.log("yes")
     mycoords.y -= step
   }
-  if (e.code == "KeyA") {
+  if (e.code == "ArrowLeft") {
     mycoords.x -= step
   }
-  if (e.code == "KeyS") {
+  if (e.code == "ArrowDown") {
     mycoords.y += step
   }
-  if (e.code == "KeyD") {
+  if (e.code == "ArrowRight") {
     mycoords.x += step
   }
   myplayer.style.top = mycoords.y + "px"
